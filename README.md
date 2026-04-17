@@ -8,3 +8,11 @@ Introducing **Demo Unlocker**! A mod for *[Wayfinder](https://github.com/echovia
 If the game is now crashing on boot, you may have to reset your save data.  
 **Windows -** delete any folders and `save_data.gz` at `%USERNAME%\AppData\Local\Neverway`  
 **Linux -** delete any folders and `save_data.gz` at `/.local/share/Neverway`
+
+---
+
+### Neverway Modding Discord
+Interested in seeing further development in modding? Join the modding [Discord](https://discord.gg/BzgPQgw2nD)!
+### Support Us...
+Enjoy the work we do on **[Wayfinder](https://github.com/Echoviax/wayfinder)** and **Neverway** mods?  
+We have a [Ko-Fi](https://ko-fi.com//Echoviax)! There is no obligation to donate.
