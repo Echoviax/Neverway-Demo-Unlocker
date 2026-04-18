@@ -1,24 +1,36 @@
 ﻿using HarmonyLib;
 using Road;
 using Road.StateMachines;
-using System;
 using System.Reflection.Emit;
+using Wayfinder.API;
 using Wayfinder.Core;
 
-public class ModEntry
+public class ModEntry : IWayfinderMod
 {
-    public static void Start()
+    public string Name => "Demo Unlocker";
+    public string Description => "Tells the game to progress past night 1 and let you save";
+    public string Version => "1.1.0";
+    public string Author => "Echoviax";
+
+    private Harmony _harmony;
+
+    public void Start()
     {
         try
         {
-            var harmony = new Harmony("com.echoviax.DemoDisabler");
-            harmony.PatchAll();
-            LoaderCore.LogSuccess("Successfully injected.");
+            _harmony = new Harmony("com.echoviax.demounlocker");
+            _harmony.PatchAll();
         }
         catch (Exception ex)
         {
             LoaderCore.LogError("Failed to inject: " + ex);
         }
+
+    }
+
+    public void Stop()
+    {
+        _harmony?.UnpatchAll(_harmony.Id);
     }
 }
 
