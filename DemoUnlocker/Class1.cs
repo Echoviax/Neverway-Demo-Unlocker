@@ -7,9 +7,10 @@ using Wayfinder.Core;
 
 public class ModEntry : IWayfinderMod
 {
+    public string ID => "com.echoviax.demounlocker";
     public string Name => "Demo Unlocker";
     public string Description => "Tells the game to progress past night 1 and let you save";
-    public string Version => "1.1.0";
+    public string Version => "1.1.1";
     public string Author => "Echoviax";
 
     private Harmony _harmony;
@@ -18,7 +19,7 @@ public class ModEntry : IWayfinderMod
     {
         try
         {
-            _harmony = new Harmony("com.echoviax.demounlocker");
+            _harmony = new Harmony(ID);
             _harmony.PatchAll();
         }
         catch (Exception ex)
